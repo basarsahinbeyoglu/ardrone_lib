@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>ardrone_lib</name>
+  <version>0.0.1</version>
+  <description>A simple interface for ARDrone</description>
+
+  <maintainer email="basar@riders.ai">Basar Sahinbeyoglu</maintainer>
+
+  <license>MIT</license>
+
+  <author email="basar@riders.ai">Basar Sahinbeyoglu</author>
+
+  <!-- <url type="website">http://wiki.ros.org/ardrone_lib</url> -->
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>rospy</depend>
+  <depend>std_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>message_generation</depend>
+
+</package>
