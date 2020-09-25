@@ -26,7 +26,7 @@ class ARDrone:
         self._land = rospy.Publisher('/drone/land', Empty, queue_size=2)
         self.reset = rospy.Publisher('/drone/reset', Empty, queue_size=2)
         self.posctrl = rospy.Publisher('/drone/posctrl', Bool, queue_size=2)
-        self.cmd = rospy.Publisher('/drone/cmd_vel', Twist, queue_size=10)
+        self.cmd = rospy.Publisher('/cmd_vel', Twist, queue_size=10)
         self.velmode = rospy.Publisher('/drone/vel_mode', Bool, queue_size=2)
 
     # shutdown handler
@@ -76,18 +76,11 @@ class ARDrone:
             rospy.loginfo("Switching Position Control OFF")
         return True
 
-    def move(self,x,y,z,r,p,yw):
+    def move(self,_cmd):
         if self.isFlying == False:
             return False
         
-        self.command.linear.x = x
-        self.command.linear.y = y
-        self.command.linear.z = z
-        self.command.angular.x = r
-        self.command.angular.y = p
-        self.command.angular.z = yw
-
-        self.cmd.publish(self.command)
+        self.cmd.publish(_cmd)
         rospy.loginfo("Hovering...")
         return True        
 
