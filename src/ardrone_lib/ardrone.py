@@ -81,7 +81,7 @@ class ARDrone:
             return False
         
         self.cmd.publish(_cmd)
-        rospy.loginfo("Hovering...")
+        rospy.loginfo("Moving...")
         return True        
 
             
